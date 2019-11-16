@@ -1,68 +1,62 @@
 <?php
-include('config.php');
-if(!empty($_POST))
-{
-$fname=mysqli_real_escape_string($db,$_POST['fname']);
-$username=mysqli_real_escape_string($db,$_POST['username']);
-$password=mysqli_real_escape_string($db,$_POST['password']);
-$phone=mysqli_real_escape_string($db,$_POST['phone']);
-
-$sql="INSERT INTO tenant(`t_id`,`t_name`,`username`,`password`,`t_phone`) values (null,'$fname','$username','$password','$phone')";
-$check=$db->query($sql);
-if($check){
-  $msg="Account Created";
-}
-else{
-  $msg="Something wrong. Try Again";
-}
-}
+include('php/tenantsignup.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-<title>
-    House Rental System
-</title>
-<link rel="stylesheet" href="css/signup.css">
+<html>
+   <head>
+      <link rel="stylesheet" href="css/log.css">
+      <link href="css/design.css" rel="stylesheet">
 </head>
 <body>
-<body>
+<div id="topnav" class="topnav">
+  <a href="index.php" id="househome">Home</a>
+  <a href="conta.html" id="conta">Contact</a>
+  <a href="abut.html" id="abut">About</a>
+</div>
 
-<form method="POST">
-  <div>
-    <h1><center>Sign Up</center></h1><br>
-    <fieldset><legend>Sign Up </legend>
-      <div><center><img src="img/land.jpg" alt="land" width=250 heoght=250></center></div>
-    <p>Please fill in this form to create an account.</p>
-    <hr><center>
+<div id="mySidenav" class="sidenav">
+    <a href="modern.html" id="about">Modern</a>
+    <a href="trad.html" id="blog">Traditional</a>
+    <a href="banglw.html" id="projects">Banglaws</a>
+    <a href="apartment.html" id="contact">Apartments</a>
+  </div>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:700,600' rel='stylesheet' type='text/css'>
+<div class="test">
+<div>
+  <center>
       <div></div>
-    <label for="First Name"><b>Name:</b></label>
-    <input type="text" placeholder="Enter First Name" name="fname" required>
-    <br><br>
-    <label for="User Name"><b>User Name:</b></label>
-    <input type="text" placeholder="Enter User Name" name="username" required>
-    <br><br>
-    <label for="psw"><b>Password:</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
-    <br><br>
-    <label for="User Name"><b>Phone number:</b></label>
-    <input type="text" placeholder="Enter User Name" name="phone" required>
-    <br><br>
-    <label>
-    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    <br><br>
-    <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      <form method="POST" style="background-color:white;">
+      <br>
+      <b style="color:red"><?php echo $msg ?></b>
+     <table>
+       <tr><h3>TENANT SIGN UP</h3></tr>
+       <tr> 
+    <td><label for="First Name"><b>Name:</b></label></td>
+    <td><input type="text" name="fname" placeholder="Full Name" class="email" /></td>
+        </tr>
+        <tr> 
+    <td><label for="First Name"><b>Username:</b></label></td>
+    <td><input type="text" name="username" placeholder="Username" class="email" /></td>
+        </tr>
+        <tr> 
+    <td><label for="First Name"><b>Password:</b></label></td>
+    <td><input type="password" name="password" placeholder="Password" class="email" /></td>
+        </tr>
+        <tr> 
+    <td><label for="First Name"><b>Phone Number:</b></label></td>
+    <td><input type="number" name="phone" placeholder="Phone Number" class="email" /></td>
+        </tr>
+        <tr>
+        <td><input type="submit" class="btn" value="Sign Up"></td>
+        <td><a href="tenant.php"><button type="button" id="btn2">Sign In</button></a></td>
+      </tr>
+       
+        </table> 
 
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div></center>
-    <div><?php echo $msg ?>
+    </center>
+    <div>
   </div>
 </form>
-
+</div> 
+      </div>
 </body>
 </html>

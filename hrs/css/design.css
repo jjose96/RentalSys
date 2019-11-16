@@ -4,7 +4,7 @@ body {
   background-size: cover;
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url(img/house.jpg);
+  background-image: url("../img/house.jpg");
 }
 * {
   box-sizing: border-box;
@@ -34,7 +34,7 @@ body {
   color: white;
 }
 .button {
-  background-color: rgb(185, 148, 46);
+  background-color: rgb(46, 180, 185);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -58,7 +58,7 @@ center {
   left: -80px;
   transition: 0.3s;
   padding: 15px;
-  width: 100px;
+  width: 150px;
   text-decoration: none;
   font-size: 20px;
   color: white;
@@ -86,5 +86,15 @@ center {
 
 #contact {
   top: 400px;
-  background-color: #555
+  background-color: rgb(155, 16, 132)
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgba(5, 4, 3, 0.664);
+   color: white;
+   text-align: center;
 }

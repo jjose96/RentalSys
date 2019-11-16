@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/design.css">
+<link href="css/design.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="topnav">
-
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href=houselog.html>Tenant/Landlord Login</a>
-  <a href=signup.html>Create an account</a>
+<div id="topnav" class="topnav">
+  <a href="index.php" id="househome">Home</a>
+  <a href="conta.html" id="conta">Contact</a>
+  <a href="abut.html" id="abut">About</a>
 </div>
 
 <div id="mySidenav" class="sidenav">
-    <a href="#" id="about">About</a>
-    <a href="#" id="blog">Blog</a>
-    <a href="#" id="projects">Projects</a>
-    <a href="#" id="contact">Contact</a>
+    <a href="modern.html" id="about">Modern</a>
+    <a href="trad.html" id="blog">Traditional</a>
+    <a href="banglw.html" id="projects">Banglaws</a>
+    <a href="apartment.html" id="contact">Apartments</a>
   </div>
-  <div class="main"></div>
+  
+<div><center>
+   <a href="tenant.php" class="button">TENANT LOGIN </a>
+  <br><br>
+  <a href="landlord.php" class="button">LANDLORD LOGIN </a>
+</center></div>
+<div class="footer">
+  <p>Designed by
+    <br>JHH.
+  </p>
+</div>
 
 </body>
 </html>
