@@ -1,6 +1,5 @@
 <?php
    include("php/lordlogin.php");
-
 ?>
 <html>
    <head>
@@ -17,6 +16,8 @@
   <a href="index.php" id="househome">Home</a>
   <a href="conta.html" id="conta">Contact</a>
   <a href="abut.html" id="abut">About</a>
+  <a href="tenant.php" id="abut">Tenant</a>
+  <a href="landlord.php" id="abut">Landlord</a>
 </div>
 
 <div id="mySidenav" class="sidenav">
@@ -30,7 +31,7 @@
 <form method="post">
 <div class="box">
 <h1>LandLord Login</h1>
-
+<b style="color:red;"> <?php echo $msg ?></b>
 <input type="text" name="username" placeholder="Username" class="email" />
   
 <input type="password" name="password" placeholder="Password" class="email" />

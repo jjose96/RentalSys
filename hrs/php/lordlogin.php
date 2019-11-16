@@ -1,7 +1,7 @@
 <?php
    include("config.php");
    session_start();
-   
+   $msg="";
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       
       $myusername = mysqli_real_escape_string($db,$_POST['username']);
@@ -16,8 +16,8 @@
          $_SESSION['login_user'] = $myusername;
          
          header("location: dashboard.php");
-      }else {
-         $error = "Your Login Name or Password is invalid";
+      } else{
+         $msg="Invalid Username/Password!";
+       }
       }
-   }
 ?>

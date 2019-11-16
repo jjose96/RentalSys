@@ -8,6 +8,9 @@ if(is_numeric($_GET['id'])){
     $row=mysqli_fetch_array($que);
 
 }
+else{
+  header("location: dashboard.php");
+}
 if(!empty($_POST)){
    $hname=htmlentities(mysqli_real_escape_string($db,$_POST['hname']));
    $description=htmlentities(mysqli_real_escape_string($db,$_POST['description']));

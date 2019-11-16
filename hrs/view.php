@@ -20,7 +20,7 @@ include('php/tensess.php');
   padding: 8px;
 }
 
-#customers tr:nth-child(even){background-color: #f2f2f2;}
+#customers tr{background-color:white;}
 
 #customers tr:hover {background-color: #ddd;}
 
@@ -39,7 +39,8 @@ include('php/tensess.php');
   <a href="index.php" id="househome">Home</a>
   <a href="conta.html" id="conta">Contact</a>
   <a href="abut.html" id="abut">About</a>
-  <a href="add.php" id="abut">Add New</a>
+  <a href="logout.php" style="float:right;">Logout</a>
+  <a href="view.php" style="float:right;"><?php echo $row['t_name'] ?></a>
 </div>
 
 <div id="mySidenav" class="sidenav">
@@ -55,22 +56,20 @@ include('php/tensess.php');
 <th>Location</th>
 <th>Published By</th>
 <th>Contact Info</th>
-<tr>
 <?php
 $sql="SELECT * FROM `infos`,`landlord` where landlord.land_id=infos.land_id";
 $ex=$db->query($sql);
 $count=0;
 while($fet=mysqli_fetch_array($ex)){
   $count=$count+1;
-  echo "<td>".$count."</td>";
+  echo "<tr><td>".$count."</td>";
   echo "<td>".$fet['h_name']."</td>";
   echo "<td>".$fet['description']."</td>";
   echo "<td>".$fet['h_address']."</td>";
   echo "<td>".$fet['l_name']."</td>";
-  echo "<td>".$fet['l_phone']."</td>";
+  echo "<td>".$fet['l_phone']."</td></tr>";
 }
 ?>
-</tr>
 </table>
 </body>
 </html>
