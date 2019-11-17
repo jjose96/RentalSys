@@ -59,7 +59,7 @@ include('php/lordsess.php');
 <th>Published By</th>
 <th>Contact Info</th>
 <?php
-$sql="SELECT * FROM `infos`,`landlord` where landlord.land_id=infos.land_id";
+$sql="SELECT * FROM `infos`,`landlord` where landlord.land_id=infos.land_id ORDER BY h_no DESC";
 $ex=$db->query($sql);
 $count=0;
 while($fet=mysqli_fetch_array($ex)){

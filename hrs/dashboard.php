@@ -41,6 +41,7 @@ include('php/lordsess.php');
   <a href="abut.html" id="abut">About</a>
   <a href="display.php" id="abut">Available</a>
   <a href="add.php" id="abut">Add New</a>
+  <a href="profile.php">Update your profile</a>
   <a href="logout.php" style="float:right;">Logout</a>
   <a href="dashboard.php" style="float:right;"><?php echo $row['l_name'] ?></a>
 
@@ -52,6 +53,9 @@ include('php/lordsess.php');
     <a href="banglw.html" id="projects">Banglaws</a>
     <a href="apartment.html" id="contact">Apartments</a>
   </div>
+  <p style="text-align:center">
+</p>
+</table>
 <table id="customers">
 <th>S.I</th>
 <th>Title</th>
@@ -63,7 +67,7 @@ include('php/lordsess.php');
 <th>Delete Actions</th>
 
 <?php
-$sql="SELECT * FROM `infos`,`landlord` where landlord.land_id=infos.land_id and landlord.land_id=$landid";
+$sql="SELECT * FROM `infos`,`landlord` where landlord.land_id=infos.land_id and landlord.land_id=$landid ";
 $ex=$db->query($sql);
 $count=0;
 while($fet=mysqli_fetch_array($ex)){

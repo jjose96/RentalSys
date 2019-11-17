@@ -1,24 +1,16 @@
 <?php
 include('php/lordsess.php');
 $name=$row['l_name'];
-if(is_numeric($_GET['id'])){
-    $id=$_GET['id'];
-    $zac="SELECT * FROM INFOS WHERE h_no=$id and land_id=$landid";
+    $zac="SELECT * FROM landlord where land_id=$landid";
     $que=$db->query($zac);
     $row=mysqli_fetch_array($que);
-
-}
-else{
-  header("location: dashboard.php");
-}
 if(!empty($_POST)){
-   $hname=htmlentities(mysqli_real_escape_string($db,$_POST['hname']));
-   $description=htmlentities(mysqli_real_escape_string($db,$_POST['description']));
-   $address=htmlentities(mysqli_real_escape_string($db,$_POST['address']));
-   $sql="UPDATE `infos` SET `h_name`='$hname',`h_address`='$address',`description`='$description' WHERE land_id='$landid' and h_no='$id'";
+   $lname=htmlentities(mysqli_real_escape_string($db,$_POST['lname']));
+   $lphone=htmlentities(mysqli_real_escape_string($db,$_POST['lphone']));
+   $sql="UPDATE `landlord` SET `l_name`='$lname',`l_phone`='$lphone' WHERE land_id='$landid'";
    $check=$db->query($sql);
    if($check){
-    $msg="Submitted";
+    $msg="Profile Updated Successfully";
   }
   else{
     $msg="Something wrong. Try Again";
@@ -58,18 +50,14 @@ if(!empty($_POST)){
       <br>
      <b style="color:red;"> <?php echo $msg ?></b>
      <table>
-     <tr><h3>Edit House Details</h3></tr>
+     <tr><h3>Edit Profile</h3></tr>
        <tr> 
-    <td><label for="First Name"><b>House Name:</b></label></td>
-    <td><input type="text" name="hname" placeholder="House Name" class="email" value="<?php echo $row['h_name'] ?>" /></td>
+    <td><label for="First Name"><b>Name:</b></label></td>
+    <td><input type="text" name="lname" placeholder="Name" class="email" value="<?php echo $row['l_name'] ?>" /></td>
         </tr>
         <tr> 
-    <td><label for="First Name"><b>Description:</b></label></td>
-    <td><textarea class="email" name="description"><?php echo $row['description'] ?></textarea></td>
-        </tr>
-        <tr> 
-    <td><label for="First Name"><b>Address:</b></label></td>
-    <td><textarea class="email" name="address"><?php echo $row['h_address'] ?></textarea></td>
+    <td><label for="First Name"><b>Phone number:</b></label></td>
+    <td><input type="text" name="lphone" placeholder="Phone" class="email" value="<?php echo $row['l_phone'] ?>" /></td>
         </tr>
         <tr>
         <td><input type="submit" class="btn" value="Submit"></td>
